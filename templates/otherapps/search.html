@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+  <title>Search Results</title>
+</head>
+<body>
+  <div class="main">
+  <h1>Results</h1>
+  {% if results %}
+  <ul class="cards">
+    {% for result in results %}
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_content">
+          <h2 class="card_title">{{result.name}}</h2>
+          <p class="card_skills">
+            <span class="skill">{{result.skills}}</span>
+          </p>
+          <p class="card_text">{{result.description | truncatechars:300 }}</p>
+          <button class="btn card_btn">Check out</button>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+</body>
+</html>

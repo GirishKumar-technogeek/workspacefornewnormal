@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/toggle.css' %}"> -->
+	<title>Search Jobs</title>
+</head>
+<main>
+  <h1><span>Search</span> by Jobtitles and skills... Press Enter after each skill</h1>
+  <div type="text" class="tags-input"></div>
+
+  <form action="{% url 'results' %}" method="GET">
+    <!-- <div class="mode"> -->
+      <!-- <input id="toggle-on" class="toggle toggle-left" name="mode" value="jobs" type="radio" checked>
+      <label for="toggle-on" class="btn">JOBS</label>
+
+      <input id="toggle-off" class="toggle toggle-right" name="mode" value="jobseekers" type="radio">
+      <label for="toggle-off" class="btn">JOBSEEKERS</label>
+    </div> -->
+
+  	<input type="text" id="keywords" name="keywords" hidden>
+    <input type="text" id="limit" name="limit">
+    <button type="submit">Search</button>
+  </form>
+</main>
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
